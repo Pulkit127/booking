@@ -18,5 +18,6 @@ Route::middleware('auth.api')->controller(AuthController::class)->group(function
     Route::get('/getVideo', 'getVideo');
     Route::post('/deleteVideo', 'deleteVideo');
     Route::get('/addImage', 'addImage');
+    Route::get('/deleteImage', 'deleteImage');
     Route::get('/logout', 'logout');
 });
