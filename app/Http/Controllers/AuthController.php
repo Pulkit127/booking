@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Video;
+use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
@@ -37,6 +38,22 @@ class AuthController extends Controller
         return response()->json(['token' => $token, 'user' => $user], 201);
     }
 
+    //Send Mail User
+    public function sendMail()
+    {
+        $to = "pawanmangalcreative@gmail.com";
+        $msg = "User Register Successfully";
+        $subject = "User Register";
+
+        $user = [
+            'email' => $to,
+            'msg' => $msg,
+            'subject' => $subject,
+        ];
+        event(new \App\Events\UserRegistered($user));
+        return response()->json(['message' => 'Mail sent successfully'], 200);
+    }
+
     // User Login
     public function login(Request $request)
     {
@@ -45,14 +62,14 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|string|min:6',
         ]);
-    
+
         // Attempt to authenticate the user
         if (!Auth::attempt($request->only('email', 'password'))) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
         $user = Auth::guard('api')->user();
         $token = $user->createToken('Personal Access Token')->accessToken;
-    
+
         return response()->json([
             'message' => 'Login successful',
             'user' => $user,
@@ -63,7 +80,7 @@ class AuthController extends Controller
     // Logout
     public function logout()
     {
-        $user = Auth::guard('api')->user()->token()->revoke(); 
+        $user = Auth::guard('api')->user()->token()->revoke();
         return response()->json(['message' => 'Successfully logged out']);
     }
 
@@ -131,7 +148,7 @@ class AuthController extends Controller
 
         // Save video details to the database
         $video = Video::create([
-            'category_id' => $request->category_id, 
+            'category_id' => $request->category_id,
             'title' => $request->title,
             'url' => asset('storage/' . $videoPath),
         ]);
