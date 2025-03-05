@@ -37,7 +37,7 @@ class UserMail extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'Mail.user_mail',
+            view: 'mail.user_mail',
         );
     }
 
