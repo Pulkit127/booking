@@ -9,17 +9,18 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class UserMail extends Mailable implements ShouldQueue
+class SendResetLinkEmail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $user;
+
     /**
      * Create a new message instance.
      */
-    public function __construct($user)
+    protected $reset_link;
+    public function __construct($reset_link)
     {
-        $this->user = $user;      
-    }   
+        $this->reset_link = $reset_link;    
+    }
 
     /**
      * Get the message envelope.
@@ -27,7 +28,7 @@ class UserMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->user['subject'],    
+            subject: 'Send Reset Link Email',
         );
     }
 
@@ -37,7 +38,10 @@ class UserMail extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'mail.user-mail',
+            view: 'mail.send-reset-link-email',
+            with: [
+                'reset_link' => $this->reset_link
+            ]
         );
     }
 

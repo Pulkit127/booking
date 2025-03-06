@@ -2,6 +2,11 @@
 @section('content')
     <div class="content-page">
         <div class="container-fluid">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card card-transparent card-block card-stretch card-height border-none">
@@ -19,7 +24,8 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-4 card-total-sale">
                                         <div class="icon iq-icon-box-2 bg-info-light">
-                                            <img src="{{ asset('public/assets/images/product/1.png')}}" class="img-fluid" alt="image">
+                                            <img src="{{ asset('public/assets/images/product/1.png') }}" class="img-fluid"
+                                                alt="image">
                                         </div>
                                         <div>
                                             <p class="mb-2">Total Sales</p>
@@ -38,7 +44,8 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-4 card-total-sale">
                                         <div class="icon iq-icon-box-2 bg-danger-light">
-                                            <img src="{{ asset('public/assets/images/product/2.png')}}" class="img-fluid" alt="image">
+                                            <img src="{{ asset('public/assets/images/product/2.png') }}" class="img-fluid"
+                                                alt="image">
                                         </div>
                                         <div>
                                             <p class="mb-2">Total Cost</p>
@@ -57,7 +64,8 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-4 card-total-sale">
                                         <div class="icon iq-icon-box-2 bg-success-light">
-                                            <img src="{{ asset('public/assets/images/product/3.png')}}" class="img-fluid" alt="image">
+                                            <img src="{{ asset('public/assets/images/product/3.png') }}" class="img-fluid"
+                                                alt="image">
                                         </div>
                                         <div>
                                             <p class="mb-2">Product Sold</p>
@@ -152,7 +160,7 @@
                                     <div class="card card-block card-stretch card-height mb-0">
                                         <div class="card-body">
                                             <div class="bg-warning-light rounded">
-                                                <img src="{{ asset('public/assets/images/product/01.png')}}"
+                                                <img src="{{ asset('public/assets/images/product/01.png') }}"
                                                     class="style-img img-fluid m-auto p-3" alt="image">
                                             </div>
                                             <div class="style-text text-left mt-3">
@@ -166,7 +174,7 @@
                                     <div class="card card-block card-stretch card-height mb-0">
                                         <div class="card-body">
                                             <div class="bg-danger-light rounded">
-                                                <img src="{{ asset('public/assets/images/product/02.png')}}"
+                                                <img src="{{ asset('public/assets/images/product/02.png') }}"
                                                     class="style-img img-fluid m-auto p-3" alt="image">
                                             </div>
                                             <div class="style-text text-left mt-3">
@@ -180,7 +188,7 @@
                                     <div class="card card-block card-stretch card-height mb-0">
                                         <div class="card-body">
                                             <div class="bg-info-light rounded">
-                                                <img src="{{ asset('public/assets/images/product/03.png')}}"
+                                                <img src="{{ asset('public/assets/images/product/03.png') }}"
                                                     class="style-img img-fluid m-auto p-3" alt="image">
                                             </div>
                                             <div class="style-text text-left mt-3">
@@ -194,7 +202,7 @@
                                     <div class="card card-block card-stretch card-height mb-0">
                                         <div class="card-body">
                                             <div class="bg-success-light rounded">
-                                                <img src="{{ asset('public/assets/images/product/02.png')}}"
+                                                <img src="{{ asset('public/assets/images/product/02.png') }}"
                                                     class="style-img img-fluid m-auto p-3" alt="image">
                                             </div>
                                             <div class="style-text text-left mt-3">
@@ -224,8 +232,8 @@
                         <div class="card-body card-item-right">
                             <div class="d-flex align-items-top">
                                 <div class="bg-warning-light rounded">
-                                    <img src="{{ asset('public/assets/images/product/04.png')}}" class="style-img img-fluid m-auto"
-                                        alt="image">
+                                    <img src="{{ asset('public/assets/images/product/04.png') }}"
+                                        class="style-img img-fluid m-auto" alt="image">
                                 </div>
                                 <div class="style-text text-left">
                                     <h5 class="mb-2">Coffee Beans Packet</h5>
@@ -239,8 +247,8 @@
                         <div class="card-body card-item-right">
                             <div class="d-flex align-items-top">
                                 <div class="bg-danger-light rounded">
-                                    <img src="{{ asset('public/assets/images/product/05.png')}}" class="style-img img-fluid m-auto"
-                                        alt="image">
+                                    <img src="{{ asset('public/assets/images/product/05.png') }}"
+                                        class="style-img img-fluid m-auto" alt="image">
                                 </div>
                                 <div class="style-text text-left">
                                     <h5 class="mb-2">Bottle Cup Set</h5>

@@ -36,7 +36,26 @@
                                             <h2 class="mb-2">Reset Password</h2>
                                             <p>Enter your email address and we'll send you an email with instructions to
                                                 reset your password.</p>
-                                            <form method="POST" action="{{ route('password.email') }}"> @csrf
+                                            @if ($errors->any())
+                                                <div class="alert alert-danger">
+                                                    <ul>
+                                                        @foreach ($errors->all() as $error)
+                                                            <li>{{ $error }}</li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            @endif
+                                            @if (session('success'))
+                                                <div class="alert alert-success">
+                                                    {{ session('success') }}
+                                                </div>
+                                            @elseif(session('error'))
+                                                <div class="alert alert-danger">
+                                                    {{ session('error') }}
+                                                </div>
+                                            @endif
+                                            <form method="POST" action="{{ route('password.email') }}">
+                                                @csrf
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="floating-label form-group">
