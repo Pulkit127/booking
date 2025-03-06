@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
 class AuthController extends Controller
 {
     public function login(LoginRequest $request)
@@ -28,9 +29,11 @@ class AuthController extends Controller
         return view('admin.auth.register');
     }
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        return view('admin.auth.register');
+        $user = User::create($request->validated());    
+        Auth::login($user); 
+        return redirect()->route('dashboard')->with('success', 'Account created successfully!');
     }
 
     public function forgotPassword()
@@ -50,6 +53,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        return redirect()->route('admin.auth.login');
+        Auth::logout();
+        return redirect()->route('login');      
     }
 }

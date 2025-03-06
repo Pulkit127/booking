@@ -16,6 +16,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
             'auth.api' => \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
+            'checkUser' => \App\Http\Middleware\CheckUserLoggedIn::class,
+
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

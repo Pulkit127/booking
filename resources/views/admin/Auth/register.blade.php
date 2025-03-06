@@ -45,18 +45,19 @@
                                                 </div>
                                             @endif
                                             <form method="POST" action="{{ route('register') }}">
+                                                @csrf
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="floating-label form-group">
                                                             <input class="floating-input form-control" type="text"
-                                                                placeholder=" " name="first_name" required>     
-                                                            <label>Full Name</label>
+                                                                placeholder=" " name="name" required>
+                                                            <label>Name</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="floating-label form-group">
                                                             <input class="floating-input form-control" type="text"
-                                                                placeholder=" " name="last_name" required>  
+                                                                placeholder=" " name="last_name" required>
                                                             <label>Last Name</label>
                                                         </div>
                                                     </div>
@@ -70,28 +71,28 @@
                                                     <div class="col-lg-6">
                                                         <div class="floating-label form-group">
                                                             <input class="floating-input form-control" type="text"
-                                                                placeholder=" " name="phone_no">
+                                                                placeholder=" " name="phone_no" required>
                                                             <label>Phone No.</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="floating-label form-group">
                                                             <input class="floating-input form-control" type="password"
-                                                                placeholder=" " name="password" required>       
+                                                                placeholder=" " name="password" required>
                                                             <label>Password</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="floating-label form-group">
                                                             <input class="floating-input form-control" type="password"
-                                                                placeholder=" " name="confirm_password" required>   
+                                                                placeholder=" " name="password_confirmation" required>
                                                             <label>Confirm Password</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="custom-control custom-checkbox mb-3">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="customCheck1">
+                                                                id="customCheck1" name="terms" required>
                                                             <label class="custom-control-label" for="customCheck1">I
                                                                 agree with the terms of use</label>
                                                         </div>
@@ -99,7 +100,7 @@
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Sign Up</button>
                                                 <p class="mt-3">
-                                                    Already have an Account <a href="auth-sign-in.html"
+                                                    Already have an Account <a href="{{ route('login') }}"      
                                                         class="text-primary">Sign In</a>
                                                 </p>
                                             </form>
