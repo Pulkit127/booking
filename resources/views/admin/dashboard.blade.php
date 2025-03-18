@@ -11,7 +11,7 @@
                 <div class="col-lg-4">
                     <div class="card card-transparent card-block card-stretch card-height border-none">
                         <div class="card-body p-0 mt-lg-2 mt-0">
-                            <h3 class="mb-3">Hi Graham, Good Morning</h3>
+                            <h3 class="mb-3">Hi {{ auth()->user()->name }}, Good Morning</h3>
                             <p class="mb-0 mr-4">Your dashboard gives you views of key performance or business
                                 process.</p>
                         </div>
@@ -28,13 +28,9 @@
                                                 alt="image">
                                         </div>
                                         <div>
-                                            <p class="mb-2">Total Sales</p>
-                                            <h4>31.50</h4>
+                                            <p class="mb-2">Total Users</p>
+                                            <h4>{{ $totalUsers ?? 0 }}</h4>
                                         </div>
-                                    </div>
-                                    <div class="iq-progress-bar mt-2">
-                                        <span class="bg-info iq-progress progress-1" data-percent="85">
-                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -48,13 +44,9 @@
                                                 alt="image">
                                         </div>
                                         <div>
-                                            <p class="mb-2">Total Cost</p>
-                                            <h4>$ 4598</h4>
+                                            <p class="mb-2">Total Videos</p>
+                                            <h4>0</h4>
                                         </div>
-                                    </div>
-                                    <div class="iq-progress-bar mt-2">
-                                        <span class="bg-danger iq-progress progress-1" data-percent="70">
-                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -68,13 +60,9 @@
                                                 alt="image">
                                         </div>
                                         <div>
-                                            <p class="mb-2">Product Sold</p>
-                                            <h4>4589 M</h4>
+                                            <p class="mb-2">Total Images</p>
+                                            <h4>0</h4>
                                         </div>
-                                    </div>
-                                    <div class="iq-progress-bar mt-2">
-                                        <span class="bg-success iq-progress progress-1" data-percent="75">
-                                        </span>
                                     </div>
                                 </div>
                             </div>

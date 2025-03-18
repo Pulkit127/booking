@@ -27,7 +27,7 @@
                     </a>
                 </li>
                 <li class=" ">
-                    <a href="#product" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                    <a href="#users" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <svg class="svg-icon" id="p-dash2" width="20" height="20"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -43,7 +43,7 @@
                             <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
                         </svg>
                     </a>
-                    <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                    <ul id="users" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
                             <a href="{{ route('user.index') }}">
                                 <i class="las la-minus"></i><span>List Users</span>

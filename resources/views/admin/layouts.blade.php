@@ -53,7 +53,7 @@
         @yield('content')
     </div>
     <!-- Wrapper End-->
-    @include('admin.partials.footer')
+    {{-- @include('admin.partials.footer') --}}
     <!-- Backend Bundle JavaScript -->
     <script src="{{ asset('public/assets/js/backend-bundle.min.js') }}"></script>
 

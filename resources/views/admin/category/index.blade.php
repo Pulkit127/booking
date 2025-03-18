@@ -2,6 +2,11 @@
 @section('content')
     <div class="content-page">
         <div class="container-fluid">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
@@ -21,7 +26,9 @@
                                             <label for="checkbox1" class="mb-0"></label>
                                         </div>
                                     </th>
+                                    <th>Image</th>
                                     <th>Name</th>
+                                    <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -34,7 +41,11 @@
                                                 <label for="checkbox2" class="mb-0"></label>
                                             </div>
                                         </td>
+                                        <td>
+                                            <img src="{{ asset('public/storage/' . $category->image) }}"
+                                                class="img-fluid" style="max-width: 50px;"> 
                                         <td>{{ $category->name ?? '' }}</td>
+                                        <td>{{ $category->created_at->format('d-m-Y') }}</td>   
                                         <td>
                                             <div class="d-flex align-items-center list-action">
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
