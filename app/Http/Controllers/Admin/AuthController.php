@@ -16,6 +16,8 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
+        $credentials['status'] = '1'; // Only allow active users
+
         if (Auth::attempt($credentials, $request->remember)) {
             return redirect()->route('dashboard')->with('success', 'Login successful!');
         }

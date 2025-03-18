@@ -100,12 +100,12 @@
                     </a>
                     <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="#">
+                            <a href="{{ route('category.index') }}">
                                 <i class="las la-minus"></i><span>List Category</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="#">
+                            <a href="{{ route('category.create') }}">
                                 <i class="las la-minus"></i><span>Add Category</span>
                             </a>
                         </li>

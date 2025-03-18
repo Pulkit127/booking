@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\UserController;  
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoryController;
 
 Route::prefix('admin')->group(function () {
 
@@ -24,6 +25,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/users/list', [UserController::class, 'index'])->name('user.index');
         Route::get('/users/delete', [UserController::class, 'delete'])->name('user.delete');
+        Route::get('/category/list', [CategoryController::class, 'index'])->name('category.index');
+        Route::get('/category/delete', [CategoryController::class, 'delete'])->name('category.delete');
+        Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+        Route::post('/category/create', [CategoryController::class, 'store'])->name('category.store');
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     });
 });

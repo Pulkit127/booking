@@ -40,7 +40,7 @@
                                     <td>{{ $user->name.' '.$user->last_name ?? '' }}</td>
                                     <td>{{ $user->email ?? '' }}</td>
                                     <td>{{ $user->phone_no ?? '' }}</td>
-                                    <td>Active</td>
+                                    <td>{{ $user->status == '1' ? 'Active' : 'Inactive' }}</td>
                                     <td>
                                         <div class="d-flex align-items-center list-action">
                                             {{-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top"

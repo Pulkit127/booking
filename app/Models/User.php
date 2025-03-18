@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-    use HasApiTokens;
+    use HasApiTokens, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -25,7 +26,7 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_no',
-        'reset_link',     
+        'reset_link',
     ];
 
     /**
@@ -50,4 +51,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected $dates = ['deleted_at']; // Tracks deletion timestamp
 }
