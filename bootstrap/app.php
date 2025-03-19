@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
             'auth.api' => \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
             'auth.admin' => \App\Http\Middleware\CheckUserLoggedIn::class,
+            'guest.admin' => \App\Http\Middleware\GuestUserLogin::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
