@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
                             <div class="header-title">
-                                <h4 class="card-title">Add category</h4>
+                                <h4 class="card-title">Add Video</h4>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
@@ -20,22 +20,34 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('video.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Category Name *</label>
-                                            <input type="text" class="form-control" placeholder="Enter Category Name"
-                                                name="name" required>
+                                            <label>Category Name</label>
+                                            <select class="form-control" name="category_id" required>
+                                                <option value="">Select Category</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>       
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Title *</label>
+                                            <input type="text" class="form-control" placeholder="Enter Title"
+                                                name="title" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Image</label>
-                                            <input type="file" class="form-control image-file" name="image"
-                                                accept="image/jpeg, image/png, image/jpg">
+                                            <label>Upload Video</label>
+                                            <input type="file" class="form-control image-file" name="url"
+                                                accept="video/mp4, video/ogg, video/avi" required>
                                         </div>
                                     </div>
                                 </div>

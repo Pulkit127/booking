@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                         <div>
-                            <h4 class="mb-3">Category List</h4>
+                            <h4 class="mb-3">Images List</h4>
                         </div>
                     </div>
                 </div>
@@ -28,19 +28,19 @@
                                 </tr>
                             </thead>
                             <tbody class="ligth-body">
-                                @foreach ($categories as $category)
+                                @foreach ($images as $image)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $category->name ?? '' }}</td>
+                                        <td>{{ $image->title ?? '' }}</td>
                                         <td>
-                                            <img src="{{ asset('public/storage/' . $category->image) }}" class="img-fluid"
+                                            <img src="{{ asset('public/storage/' . $image->url) }}" class="img-fluid"
                                                 style="max-width: 50px;">
-                                        <td>{{ $category->created_at->format('d-m-Y') }}</td>
+                                        <td>{{ $image->created_at->format('d-m-Y') }}</td>
                                         <td>
                                             <div class="d-flex align-items-center list-action">
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
                                                     title="" data-original-title="Delete"
-                                                    href="{{ route('category.delete', ['id' => $category->id]) }}"><i
+                                                    href="{{ route('image.delete', ['id' => $image->id]) }}"><i
                                                         class="ri-delete-bin-line mr-0"></i></a>
                                             </div>
                                         </td>

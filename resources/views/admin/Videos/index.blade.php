@@ -11,7 +11,7 @@
                 <div class="col-lg-12">
                     <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                         <div>
-                            <h4 class="mb-3">Category List</h4>
+                            <h4 class="mb-3">Videos List</h4>
                         </div>
                     </div>
                 </div>
@@ -21,26 +21,28 @@
                             <thead class="bg-white text-uppercase">
                                 <tr class="ligth ligth-data">
                                     <th>Sr no.</th>
-                                    <th>Name</th>
-                                    <th>Image</th>
+                                    <th>Category Name</th>
+                                    <th>Title</th>
+                                    <th>Url</th>
                                     <th>Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody class="ligth-body">
-                                @foreach ($categories as $category)
+                                @foreach ($videos as $video)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $category->name ?? '' }}</td>
+                                        <td>{{ $video->category->name ?? '' }}</td> 
+                                        <td>{{ $video->title ?? '' }}</td>
                                         <td>
-                                            <img src="{{ asset('public/storage/' . $category->image) }}" class="img-fluid"
-                                                style="max-width: 50px;">
-                                        <td>{{ $category->created_at->format('d-m-Y') }}</td>
+                                            <iframe src="{{ asset('public/storage/' . $video->url) }}" title="{{ $video->title ?? '' }}"></iframe>
+                                        </td>
+                                        <td>{{ $video->created_at->format('d-m-Y') }}</td>
                                         <td>
                                             <div class="d-flex align-items-center list-action">
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
                                                     title="" data-original-title="Delete"
-                                                    href="{{ route('category.delete', ['id' => $category->id]) }}"><i
+                                                    href="{{ route('video.delete', ['id' => $video->id]) }}"><i
                                                         class="ri-delete-bin-line mr-0"></i></a>
                                             </div>
                                         </td>

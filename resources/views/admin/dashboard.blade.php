@@ -45,7 +45,7 @@
                                         </div>
                                         <div>
                                             <p class="mb-2">Total Videos</p>
-                                            <h4>0</h4>
+                                            <h4>{{ $totalVideos ?? 0 }}</h4>
                                         </div>
                                     </div>
                                 </div>

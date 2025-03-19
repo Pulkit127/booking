@@ -36,8 +36,9 @@ class CategoryController extends Controller
     public function delete()
     {
         $id = request('id');
-        $user = Category::find($id);
-        $user->delete();
+        $categories = Category::find($id);
+        unlink(public_path('storage/' . $categories->image));
+        $categories->delete();
         return redirect()->route('category.index')->with('success', 'Category deleted successfully');
     }
 }
