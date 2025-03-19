@@ -15,12 +15,7 @@
                         <table class="data-table table mb-0 tbl-server-info">
                             <thead class="bg-white text-uppercase">
                                 <tr class="ligth ligth-data">
-                                    <th>
-                                        <div class="checkbox d-inline-block">
-                                            <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                            <label for="checkbox1" class="mb-0"></label>
-                                        </div>
-                                    </th>
+                                    <th>Sr no. </th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Contact</th>
@@ -29,29 +24,22 @@
                                 </tr>
                             </thead>
                             <tbody class="ligth-body">
-                                @foreach($users as $user)   
-                                <tr>
-                                    <td>
-                                        <div class="checkbox d-inline-block">
-                                            <input type="checkbox" class="checkbox-input" id="checkbox2">       
-                                            <label for="checkbox2" class="mb-0"></label>
-                                        </div>
-                                    </td>
-                                    <td>{{ $user->name.' '.$user->last_name ?? '' }}</td>
-                                    <td>{{ $user->email ?? '' }}</td>
-                                    <td>{{ $user->phone_no ?? '' }}</td>
-                                    <td>{{ $user->status == '1' ? 'Active' : 'Inactive' }}</td>
-                                    <td>
-                                        <div class="d-flex align-items-center list-action">
-                                            {{-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top"
-                                                title="" data-original-title="View" href="#"><i
-                                                    class="ri-eye-line mr-0"></i></a> --}}
-                                            <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
-                                                title="" data-original-title="Delete" href="{{ route('user.delete', ['id' => $user->id]) }}"><i
-                                                    class="ri-delete-bin-line mr-0"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $user->name . ' ' . $user->last_name ?? '' }}</td>
+                                        <td>{{ $user->email ?? '' }}</td>
+                                        <td>{{ $user->phone_no ?? '' }}</td>
+                                        <td>{{ $user->status == '1' ? 'Active' : 'Inactive' }}</td>
+                                        <td>
+                                            <div class="d-flex align-items-center list-action">
+                                                <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="Delete"
+                                                    href="{{ route('user.delete', ['id' => $user->id]) }}"><i
+                                                        class="ri-delete-bin-line mr-0"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
