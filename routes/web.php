@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\RoomController;
+use App\Models\Room;
 
 Route::prefix('admin')->group(function () {
 
@@ -43,6 +45,17 @@ Route::prefix('admin')->group(function () {
         Route::get('/video/delete', [VideoController::class, 'delete'])->name('video.delete');
         Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
         Route::post('/video/create', [VideoController::class, 'store'])->name('video.store');
+
+        Route::get('/room/list', [RoomController::class, 'index'])->name('room.index');
+        Route::get('/room/destroy', [RoomController::class, 'destroy'])->name('room.destroy');
+        Route::get('/room/create', [RoomController::class, 'create'])->name('room.create');
+        Route::post('/room/create', [RoomController::class, 'store'])->name('room.store');
+        Route::get('/room/show', [RoomController::class, 'show'])->name('room.show');
+        Route::get('/room/edit', [RoomController::class, 'edit'])->name('room.edit');
+        Route::put('/room/update/{room_id}', [RoomController::class, 'update'])->name('room.update');
+        Route::post('/room/delete-image', [RoomController::class, 'deleteImage'])->name('room.deleteImage');
+
+
 
 
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -8,7 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     public function index() {
-        $users = User::all()->sortByDesc('id');
+        $users = User::all()->where('role','user')->sortByDesc('id');
         return view('admin.users.index', compact('users'));         
     }
 

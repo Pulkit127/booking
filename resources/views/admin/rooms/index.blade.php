@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                         <div>
-                            <h4 class="mb-3">Users List</h4>
+                            <h4 class="mb-3">Rooms List</h4>
                         </div>
                     </div>
                 </div>
@@ -16,26 +16,33 @@
                             <thead class="bg-white text-uppercase">
                                 <tr class="ligth ligth-data">
                                     <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Contact</th>
+                                    <th>Room Number</th>
+                                    <th>Room Type</th>
+                                    <th>Price</th>
                                     <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="ligth-body">
-                                @foreach ($users as $user)
+                                @foreach ($rooms as $room)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $user->name . ' ' . $user->last_name ?? '' }}</td>
-                                        <td>{{ $user->email ?? '' }}</td>
-                                        <td>{{ $user->phone_no ?? '' }}</td>
-                                        <td>{{ $user->status == '1' ? 'Active' : 'Inactive' }}</td>
+                                        <td>{{ $room->id }}</td>
+                                        <td>{{ $room->room_number }}</td>
+                                        <td>{{ $room->roomType->name }}</td>
+                                        <td>₹{{ $room->price_per_night }}</td>
+                                        <td>{{ $room->status }}</td>
                                         <td>
                                             <div class="d-flex align-items-center list-action">
+                                                <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="View"
+                                                    href="{{ route('room.show', ['id' => $room->id]) }}"><i
+                                                        class="ri-eye-line mr-0"></i></a>
+                                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="Edit" href="{{ route('room.edit', ['id' => $room->id]) }}"><i
+                                                        class="ri-pencil-line mr-0"></i></a>
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
                                                     title="" data-original-title="Delete"
-                                                    href="{{ route('user.delete', ['id' => $user->id]) }}"><i
+                                                    href="{{ route('room.destroy', ['id' => $room->id]) }}"><i
                                                         class="ri-delete-bin-line mr-0"></i></a>
                                             </div>
                                         </td>

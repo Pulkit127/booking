@@ -16,9 +16,13 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');
-        $credentials['status'] = '1'; // Only allow active users
 
-        if (Auth::attempt($credentials, $request->remember)) {
+        $user = User::where('email', $credentials['email'])
+            ->where('role', 'admin')
+            ->where('status', 1)
+            ->first();
+
+        if ($user && Auth::attempt($credentials, $request->remember)) {
             return redirect()->route('dashboard')->with('success', 'Login successful!');
         }
         return back()->with('error', 'Invalid credentials.');
@@ -36,8 +40,8 @@ class AuthController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $user = User::create($request->validated());    
-        Auth::login($user); 
+        $user = User::create($request->validated());
+        Auth::login($user);
         return redirect()->route('dashboard')->with('success', 'Account created successfully!');
     }
 
@@ -53,7 +57,7 @@ class AuthController extends Controller
             event(new SendResetLinkEmail($user));
             return redirect()->route('login')->with('success', 'Password reset link sent to your email.');
         }
-        return back()->with('error', 'No user found with this email.');   
+        return back()->with('error', 'No user found with this email.');
     }
 
     public function resetPassword($resetlink)
@@ -80,6 +84,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');      
+        return redirect()->route('login');
     }
 }
