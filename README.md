@@ -69,6 +69,8 @@ DB_PASSWORD=
 <code>php artisan migrate</code>
 </pre>
 
+### Step 6: Run Seeder
+
 <pre>
 <code>php artisan db:seed --class=UserSeeder</code>
 </pre>
@@ -77,7 +79,7 @@ DB_PASSWORD=
 <code>php artisan db:seed --class=RoomTypeSeeder</code>
 </pre>
 
-### Step 6: Run Storage Link
+### Step 7: Run Storage Link
 
 <pre>
 <code>php artisan storage:link</code>
