@@ -19,7 +19,7 @@ class AuthController extends Controller
 
         $user = User::where('email', $credentials['email'])
             ->where('role', 'admin')
-            ->where('status', 1)
+            ->where('status', '1')
             ->first();
 
         if ($user && Auth::attempt($credentials, $request->remember)) {

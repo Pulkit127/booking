@@ -2,6 +2,11 @@
 @section('content')
     <div class="content-page">
         <div class="container-fluid">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
@@ -33,6 +38,14 @@
                                         <td>{{ $user->status == '1' ? 'Active' : 'Inactive' }}</td>
                                         <td>
                                             <div class="d-flex align-items-center list-action">
+                                                <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="View"
+                                                    href="{{ route('user.show', ['id' => $user->id]) }}"><i
+                                                        class="ri-eye-line mr-0"></i></a>
+                                                <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="Edit"
+                                                    href="{{ route('user.edit', ['id' => $user->id]) }}"><i
+                                                        class="ri-pencil-line mr-0"></i></a>
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
                                                     title="" data-original-title="Delete"
                                                     href="{{ route('user.delete', ['id' => $user->id]) }}"><i

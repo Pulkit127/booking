@@ -30,6 +30,12 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/users/list', [UserController::class, 'index'])->name('user.index');
         Route::get('/users/delete', [UserController::class, 'delete'])->name('user.delete');
+        Route::get('/users/show', [UserController::class, 'show'])->name('user.show');  
+        Route::get('/users/create', [UserController::class, 'create'])->name('user.create'); 
+        Route::post('/users/store', [UserController::class, 'store'])->name('user.store');  
+        Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');      
+        Route::put('/users/update/{user_id}', [UserController::class, 'update'])->name('user.update');  
+ 
 
         Route::get('/category/list', [CategoryController::class, 'index'])->name('category.index');
         Route::get('/category/delete', [CategoryController::class, 'delete'])->name('category.delete');

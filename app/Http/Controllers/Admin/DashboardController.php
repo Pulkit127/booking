@@ -9,7 +9,7 @@ use App\Models\Video;
 class DashboardController extends Controller
 {
     public function index() {
-        $totalUsers = User::count();
+        $totalUsers = User::where('role','user')->count();
         $totalVideos = Video::count();
         return view('admin.dashboard',compact('totalUsers','totalVideos'));     
     }

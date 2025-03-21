@@ -49,6 +49,11 @@
                                 <i class="las la-minus"></i><span>List Users</span>
                             </a>
                         </li>
+                        <li class="">
+                            <a href="{{ route('user.create') }}">
+                                <i class="las la-minus"></i><span>Add User</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class=" ">

@@ -2,6 +2,11 @@
 @section('content')
     <div class="content-page">
         <div class="container-fluid">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
@@ -38,7 +43,8 @@
                                                     href="{{ route('room.show', ['id' => $room->id]) }}"><i
                                                         class="ri-eye-line mr-0"></i></a>
                                                 <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top"
-                                                    title="" data-original-title="Edit" href="{{ route('room.edit', ['id' => $room->id]) }}"><i
+                                                    title="" data-original-title="Edit"
+                                                    href="{{ route('room.edit', ['id' => $room->id]) }}"><i
                                                         class="ri-pencil-line mr-0"></i></a>
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top"
                                                     title="" data-original-title="Delete"

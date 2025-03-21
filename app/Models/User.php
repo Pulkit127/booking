@@ -27,6 +27,13 @@ class User extends Authenticatable
         'password',
         'phone_no',
         'reset_link',
+        'role',
+        'profile_picture',  
+        'display_name',
+        'dob',  
+        'address',
+        'nationality',
+        'gender'
     ];
 
     /**
