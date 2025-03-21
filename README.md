@@ -73,6 +73,10 @@ DB_PASSWORD=
 <code>php artisan db:seed --class=UserSeeder</code>
 </pre>
 
+<pre>
+<code>php artisan db:seed --class=RoomTypeSeeder</code>
+</pre>
+
 ### Step 6: Run Storage Link
 
 <pre>
