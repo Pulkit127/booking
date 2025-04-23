@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ env('APP_NAME') }}</title>
+    <title>Online Shopping</title>
 
     <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('public/assets/images/shop-ico.png') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/css/backend-plugin.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/css/backende209.css?v=1.0.0') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css') }}">

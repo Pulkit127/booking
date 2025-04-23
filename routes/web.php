@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\RoomController;
+use App\Http\Controllers\Admin\BookingController;
+
 use App\Models\Room;
 
 Route::prefix('admin')->group(function () {
@@ -42,6 +44,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
         Route::post('/category/create', [CategoryController::class, 'store'])->name('category.store');
 
+        Route::get('/booking/list', [BookingController::class, 'index'])->name('booking.index');
+        Route::get('/booking/create', [BookingController::class, 'create'])->name('booking.create');
+        Route::post('/booking/create', [BookingController::class, 'store'])->name('booking.store');
+        Route::get('/booking/show', [BookingController::class, 'show'])->name('booking.show');
+
         Route::get('/image/list', [ImageController::class, 'index'])->name('image.index');
         Route::get('/image/delete', [ImageController::class, 'delete'])->name('image.delete');
         Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
@@ -60,9 +67,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/room/edit', [RoomController::class, 'edit'])->name('room.edit');
         Route::put('/room/update/{room_id}', [RoomController::class, 'update'])->name('room.update');
         Route::post('/room/delete-image', [RoomController::class, 'deleteImage'])->name('room.deleteImage');
-
-
-
 
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     });

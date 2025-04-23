@@ -30,6 +30,14 @@
                                                 name="room_number">
                                         </div>
                                     </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Room Name</label>
+                                            <input type="text" class="form-control" name="name" placeholder="E.g., Deluxe Room">
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Room Type</label>

@@ -23,6 +23,7 @@ class RoomRequest extends FormRequest
     {
 
         return [
+            'name'          => 'required',
             'room_number'   => $this->isMethod('post') ? 'required|string|unique:rooms,room_number,' . $this->room : 'nullable|string', // Unique room number
             'room_type'     => 'required', // Must exist in room_types table
             'description'   => 'nullable|string',

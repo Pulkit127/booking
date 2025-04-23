@@ -34,6 +34,13 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Room Name</label>
+                                            <input type="text" class="form-control" name="name" placeholder="E.g., Deluxe Room" value="{{ old('name', $room->name) }}" required>
+                                        </div>
+                                    </div>
+
                                     <!-- Room Type -->
                                     <div class="col-md-6">
                                         <div class="form-group">

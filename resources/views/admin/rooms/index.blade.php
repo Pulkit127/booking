@@ -22,6 +22,7 @@
                                 <tr class="ligth ligth-data">
                                     <th>ID</th>
                                     <th>Room Number</th>
+                                    <th>Room Name</th>
                                     <th>Room Type</th>
                                     <th>Price</th>
                                     <th>Status</th>
@@ -33,6 +34,7 @@
                                     <tr>
                                         <td>{{ $room->id }}</td>
                                         <td>{{ $room->room_number }}</td>
+                                        <td>{{ $room->name }}</td>
                                         <td>{{ $room->roomType->name }}</td>
                                         <td>₹{{ $room->price_per_night }}</td>
                                         <td>{{ $room->status }}</td>

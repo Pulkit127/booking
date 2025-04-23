@@ -44,6 +44,7 @@
                 <div class="card shadow-sm p-3">
                     <h4 class="text-primary">Room Details</h4>
                     <hr>
+                    <p><strong>Room Name:</strong> {{ ucfirst($room->name) }}</p>
                     <p><strong>Room Type:</strong> {{ ucfirst($room->roomType->name) }}</p>
                     <p><strong>Description:</strong> {{ $room->description }}</p>
                     <p><strong>Price per Night:</strong> ₹{{ number_format($room->price_per_night, 2) }}</p>

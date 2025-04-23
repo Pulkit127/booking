@@ -17,8 +17,56 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card card-block card-stretch card-height">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-4 card-total-sale">
+                                        <div class="icon iq-icon-box-2 bg-info-light">
+                                            <img src="{{ asset('public/assets/images/product/1.png') }}" class="img-fluid"
+                                                alt="image">
+                                        </div>
+                                        <div>
+                                            <p class="mb-2">Today Bookings</p>
+                                            <h4>0</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card card-block card-stretch card-height">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-4 card-total-sale">
+                                        <div class="icon iq-icon-box-2 bg-info-light">
+                                            <img src="{{ asset('public/assets/images/product/1.png') }}" class="img-fluid"
+                                                alt="image">
+                                        </div>
+                                        <div>
+                                            <p class="mb-2">Total Bookings</p>
+                                            <h4>0</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card card-block card-stretch card-height">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-4 card-total-sale">
+                                        <div class="icon iq-icon-box-2 bg-info-light">
+                                            <img src="{{ asset('public/assets/images/product/1.png') }}" class="img-fluid"
+                                                alt="image">
+                                        </div>
+                                        <div>
+                                            <p class="mb-2">Today Users</p>
+                                            <h4>0</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-lg-4 col-md-4">
                             <div class="card card-block card-stretch card-height">
                                 <div class="card-body">
@@ -30,38 +78,6 @@
                                         <div>
                                             <p class="mb-2">Total Users</p>
                                             <h4>{{ $totalUsers ?? 0 }}</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="card card-block card-stretch card-height">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-4 card-total-sale">
-                                        <div class="icon iq-icon-box-2 bg-danger-light">
-                                            <img src="{{ asset('public/assets/images/product/2.png') }}" class="img-fluid"
-                                                alt="image">
-                                        </div>
-                                        <div>
-                                            <p class="mb-2">Total Videos</p>
-                                            <h4>{{ $totalVideos ?? 0 }}</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="card card-block card-stretch card-height">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-4 card-total-sale">
-                                        <div class="icon iq-icon-box-2 bg-success-light">
-                                            <img src="{{ asset('public/assets/images/product/3.png') }}" class="img-fluid"
-                                                alt="image">
-                                        </div>
-                                        <div>
-                                            <p class="mb-2">Total Images</p>
-                                            <h4>0</h4>
                                         </div>
                                     </div>
                                 </div>
