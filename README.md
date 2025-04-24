@@ -34,7 +34,7 @@ cd laraveltask
 Update the `.env` file with the following:
 
 <pre>
-<code>APP_NAME=laraveltask
+<code>APP_NAME=Online Shopping
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=false
