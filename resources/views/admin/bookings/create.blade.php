@@ -23,7 +23,6 @@
                         <form action="{{ route('booking.store') }}" method="POST">
                             @csrf
                             <div class="row">
-
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Guest Name *</label>

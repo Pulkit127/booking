@@ -85,10 +85,10 @@
                                                     </div>
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Sign In</button>
-                                                <p class="mt-3">
+                                                {{-- <p class="mt-3">
                                                     Create an Account <a href="{{ route('register-view-page') }}"
                                                         class="text-primary">Sign Up</a>
-                                                </p>
+                                                </p> --}}
                                             </form>
                                         </div>
                                     </div>

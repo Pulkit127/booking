@@ -9,8 +9,8 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\BookingController;
-
-use App\Models\Room;
+use App\Http\Controllers\Admin\PageController;
+use App\Models\Page;
 
 Route::prefix('admin')->group(function () {
 
@@ -24,7 +24,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/forgot-password', [AuthController::class, 'sendResetLinkEmail'])->name('password.email');
         Route::post('/reset-password', [AuthController::class, 'changePassword'])->name('change-password');
     });
-    
+
     // Protected Routes (Only for Authenticated Admins)
     Route::middleware(['auth.admin'])->group(function () {
 
@@ -32,12 +32,12 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/users/list', [UserController::class, 'index'])->name('user.index');
         Route::get('/users/delete', [UserController::class, 'delete'])->name('user.delete');
-        Route::get('/users/show', [UserController::class, 'show'])->name('user.show');  
-        Route::get('/users/create', [UserController::class, 'create'])->name('user.create'); 
-        Route::post('/users/store', [UserController::class, 'store'])->name('user.store');  
-        Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');      
-        Route::put('/users/update/{user_id}', [UserController::class, 'update'])->name('user.update');  
- 
+        Route::get('/users/show', [UserController::class, 'show'])->name('user.show');
+        Route::get('/users/create', [UserController::class, 'create'])->name('user.create');
+        Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
+        Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');
+        Route::put('/users/update/{user_id}', [UserController::class, 'update'])->name('user.update');
+
 
         Route::get('/category/list', [CategoryController::class, 'index'])->name('category.index');
         Route::get('/category/delete', [CategoryController::class, 'delete'])->name('category.delete');
@@ -67,6 +67,13 @@ Route::prefix('admin')->group(function () {
         Route::get('/room/edit', [RoomController::class, 'edit'])->name('room.edit');
         Route::put('/room/update/{room_id}', [RoomController::class, 'update'])->name('room.update');
         Route::post('/room/delete-image', [RoomController::class, 'deleteImage'])->name('room.deleteImage');
+
+        Route::get('/page/list', [PageController::class, 'index'])->name('pages.index');
+        Route::get('/page/create', [PageController::class, 'create'])->name('pages.create');
+        Route::post('/page/create', [PageController::class, 'store'])->name('pages.store');
+        Route::get('/page/edit', [PageController::class, 'edit'])->name('pages.edit');
+        Route::put('/page/update/{id}', [PageController::class, 'update'])->name('pages.update');
+        Route::get('/page/delete', [PageController::class, 'delete'])->name('pages.delete');
 
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     });
