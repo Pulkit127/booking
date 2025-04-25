@@ -2,7 +2,17 @@
 
 @section('content')
     <div class="content-page">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
 
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <div class="container mt-4">
             <div class="card shadow-lg p-4">
                 <div class="row mt-4">

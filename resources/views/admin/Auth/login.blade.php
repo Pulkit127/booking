@@ -3,121 +3,141 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Online Shopping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Shopping - Login</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('public/assets/images/shop-ico.png') }}">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('public/assets/css/backend-plugin.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/css/backende209.css?v=1.0.0') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/vendor/%40fortawesome/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('public/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendor/remixicon/fonts/remixicon.css') }}">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #e0f7fa, #fff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .auth-card {
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .auth-content {
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+        }
+
+        .btn-primary {
+            border-radius: 12px;
+            padding: 0.6rem 2rem;
+            font-weight: 600;
+            background-color: #3f51b5;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #303f9f;
+        }
+
+        .image-right {
+            max-width: 100%;
+            padding: 2rem;
+        }
+
+        .alert {
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+    </style>
 </head>
 
-<body class=" ">
-    <!-- loader Start -->
-    <div id="loading">
-        <div id="loading-center">
-        </div>
-    </div>
-    <!-- loader END -->
+<body>
 
     <div class="wrapper">
         <section class="login-content">
             <div class="container">
-                <div class="row align-items-center justify-content-center height-self-center">
-                    <div class="col-lg-8">
+                <div class="row justify-content-center align-items-center vh-100">
+                    <div class="col-md-10 col-lg-8">
                         <div class="card auth-card">
-                            <div class="card-body p-0">
-                                <div class="d-flex align-items-center auth-content">
-                                    <div class="col-lg-7 align-self-center">
-                                        <div class="p-3">
-                                            <h2 class="mb-2">Sign In</h2>
-                                            <p>Login to stay connected.</p>
-                                            @if ($errors->any())
-                                                <div class="alert alert-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                            <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            @endif
-                                            @if (session('success'))
-                                                <div class="alert alert-success">
-                                                    {{ session('success') }}
-                                                </div>
-                                            @elseif(session('error'))
-                                                <div class="alert alert-danger">
-                                                    {{ session('error') }}
-                                                </div>
-                                            @endif
-                                            <form method="POST" action="{{ route('login') }}">
-                                                @csrf
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="floating-label form-group">
-                                                            <input class="floating-input form-control" type="email"
-                                                                placeholder=" " name="email" required>
-                                                            <label>Email</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="floating-label form-group">
-                                                            <input class="floating-input form-control" type="password"
-                                                                placeholder=" " name="password" required>
-                                                            <label>Password</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="custom-control custom-checkbox mb-3">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="customCheck1" name="remember">
-                                                            <label class="custom-control-label control-label-1"
-                                                                for="customCheck1">Remember Me</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <a href="{{ route('forgot-password') }}"
-                                                            class="text-primary float-right">Forgot Password?</a>
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Sign In</button>
-                                                {{-- <p class="mt-3">
-                                                    Create an Account <a href="{{ route('register-view-page') }}"
-                                                        class="text-primary">Sign Up</a>
-                                                </p> --}}
-                                            </form>
+                            <div class="row no-gutters">
+                                <div class="col-md-6 p-4">
+                                    <h2 class="mb-3">Welcome Back</h2>
+                                    <p class="mb-4 text-muted">Please sign in to your account</p>
+
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul class="mb-0">
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-5 content-right">
-                                        <img src="{{ asset('public/assets/images/login/01.png') }}"
-                                            class="img-fluid image-right" alt="">
-                                    </div>
+                                    @endif
+
+                                    @if (session('success'))
+                                        <div class="alert alert-success">{{ session('success') }}</div>
+                                    @elseif(session('error'))
+                                        <div class="alert alert-danger">{{ session('error') }}</div>
+                                    @endif
+
+                                    <form method="POST" action="{{ route('login') }}">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" name="email" class="form-control" placeholder="example@email.com" required>
+                                        </div>
+
+                                        <div class="form-group mt-3">
+                                            <label for="password">Password</label>
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="********" required>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center mt-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                                                <label class="form-check-label" for="remember">Remember Me</label>
+                                            </div>
+                                            <a href="{{ route('forgot-password') }}" class="text-primary">Forgot Password?</a>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary w-100 mt-4">Sign In</button>
+                                    </form>
+                                </div>
+                                <div class="col-md-6 bg-light d-flex align-items-center justify-content-center">
+                                    <img src="{{ asset('public/assets/images/login/01.png') }}" alt="Login Illustration" class="image-right">
                                 </div>
                             </div>
                         </div>
+                        {{-- <p class="text-center mt-3">
+                            Don't have an account? <a href="{{ route('register-view-page') }}" class="text-primary">Sign Up</a>
+                        </p> --}}
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Backend Bundle JavaScript -->
+    <!-- Scripts -->
     <script src="{{ asset('public/assets/js/backend-bundle.min.js') }}"></script>
-
-    <!-- Table Treeview JavaScript -->
     <script src="{{ asset('public/assets/js/table-treeview.js') }}"></script>
-
-    <!-- Chart Custom JavaScript -->
     <script src="{{ asset('public/assets/js/customizer.js') }}"></script>
-
-    <!-- Chart Custom JavaScript -->
-    <script async src="{{ asset('public/assets/js/chart-custom.js') }}"></script>
-
-    <!-- app JavaScript -->
+    <script src="{{ asset('public/assets/js/chart-custom.js') }}"></script>
     <script src="{{ asset('public/assets/js/app.js') }}"></script>
 </body>
 

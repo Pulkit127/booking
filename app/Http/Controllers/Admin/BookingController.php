@@ -30,6 +30,13 @@ class BookingController extends Controller
         // Get price per night and calculate total price
         $price_per_night = $this->getRoomPrice($data['room_id']);
 
+        // Check if the room is already booked for the selected dates
+        $isBooked = $this->isRoomBooked($data['room_id'], $data['check_in_date'], $data['check_out_date']);
+
+        if ($isBooked) {
+            return back()->with('error', 'The selected room is already booked for the chosen dates.');
+        }
+
         // Calculate total price if not provided
         if (empty($request->total_price)) {
             $data['total_price'] = $this->calculateTotalPrice($data['check_in_date'], $data['check_out_date'], $price_per_night);
@@ -38,6 +45,22 @@ class BookingController extends Controller
 
         Booking::create($data);
         return redirect()->route('booking.index')->with('success', 'Booking created successfully');
+    }
+
+    public function isRoomBooked($roomId, $checkInDate, $checkOutDate)
+    {
+        return Booking::where('room_id', $roomId)
+            ->where(function ($query) use ($checkInDate, $checkOutDate) {
+                // Check if the booking overlaps with an existing booking
+                $query->whereBetween('check_in_date', [$checkInDate, $checkOutDate])
+                    ->orWhereBetween('check_out_date', [$checkInDate, $checkOutDate])
+                    ->orWhere(function ($query) use ($checkInDate, $checkOutDate) {
+                        // If the new booking entirely overlaps with an existing one
+                        $query->where('check_in_date', '<=', $checkInDate)
+                            ->where('check_out_date', '>=', $checkOutDate);
+                    });
+            })
+            ->exists();
     }
 
     // Function to get the price_per_night based on room_id
