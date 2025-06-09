@@ -26,7 +26,7 @@ return new class extends Migration
             $table->decimal('total_price', 10, 2);
         
             $table->enum('payment_status', ['Pending', 'Paid', 'Failed'])->default('Pending');
-            $table->enum('booking_status', ['Pending', 'Confirmed', 'Checked-in', 'Checked-out', 'Cancelled'])->default('Pending');
+            $table->enum('booking_status', ['Pending', 'Checked-in', 'Checked-out', 'Cancelled'])->default('Pending');
         
             $table->text('notes')->nullable();
         

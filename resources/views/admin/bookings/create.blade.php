@@ -77,30 +77,6 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Payment Status *</label>
-                                        <select name="payment_status" class="form-control" required>
-                                            <option value="Pending">Pending</option>
-                                            <option value="Paid">Paid</option>
-                                            <option value="Failed">Failed</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Booking Status *</label>
-                                        <select name="booking_status" class="form-control" required>
-                                            <option value="Pending">Pending</option>
-                                            <option value="Confirmed">Confirmed</option>
-                                            <option value="Checked-in">Checked-in</option>
-                                            <option value="Checked-out">Checked-out</option>
-                                            <option value="Cancelled">Cancelled</option>
-                                        </select>
-                                    </div>
-                                </div>
-
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Notes</label>

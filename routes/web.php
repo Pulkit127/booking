@@ -37,6 +37,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
         Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');
         Route::put('/users/update/{user_id}', [UserController::class, 'update'])->name('user.update');
+        Route::get('/users/status/{id}/{status}', [UserController::class, 'updateStatus'])->name('user.status');
 
 
         Route::get('/category/list', [CategoryController::class, 'index'])->name('category.index');

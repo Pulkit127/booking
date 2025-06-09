@@ -52,6 +52,17 @@
                             <div class="d-flex justify-content-between mt-4">
                                 <a href="{{ route('user.edit', ['id' => $user->id]) }}"
                                     class="btn btn-primary btn-lg w-25"><i class="bi bi-pencil-square"></i> Edit Profile</a>
+                                @if ($user->status == '1')
+                                    <a href="{{ route('user.status', ['id' => $user->id, 'status' => $user->status]) }}"
+                                        class="btn btn-success btn-lg w-25">
+                                        <i class="bi bi-check-circle"></i> Activate Account
+                                    </a>
+                                @elseif($user->status == '0')
+                                    <a href="{{ route('user.status', ['id' => $user->id, 'status' => $user->status]) }}"
+                                        class="btn btn-danger btn-lg w-25">
+                                        <i class="bi bi-check-circle"></i> Deactivate Account
+                                    </a>
+                                @endif
                                 <a href="{{ route('user.delete', $user->id) }}" class="btn btn-danger btn-lg w-25 ms-2"><i
                                         class="bi bi-trash"></i> Delete Account</a>
                             </div>
