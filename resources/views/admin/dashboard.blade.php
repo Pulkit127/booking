@@ -13,43 +13,51 @@
                     <p>Your dashboard gives you views of key performance metrics.</p>
                 </div>
             </div>
-    
+
             <!-- Key Metrics Overview -->
             <div class="row">
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-body">
-                            <p>Today's Bookings</p>
-                            <h4>0</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <p>Total Bookings</p>
-                            <h4>0</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <p>Today's Users</p>
-                            <h4>0</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
                             <p>Total Users</p>
-                            <h4>{{ $totalUsers ?? 0 }}</h4>
+                            <h4>0</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Total Rooms</p>
+                            <h4>0</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Total Booking</p>
+                            <h4>0</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Total Images</p>
+                            <h4>0</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Total Videos</p>
+                            <h4>0</h4>
                         </div>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Data Visualizations -->
             <div class="row">
                 <div class="col-md-6">
@@ -73,9 +81,9 @@
                     </div>
                 </div>
             </div>
-    
-           
-    
+
+
+
             <!-- Order Summary -->
             <div class="row">
                 <div class="col-md-12">
