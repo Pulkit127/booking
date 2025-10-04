@@ -114,7 +114,7 @@
                                         <div class="d-flex flex-wrap">
                                             @foreach ($room->images as $image)
                                                 <div class="position-relative me-2 mb-2">
-                                                    <img src="{{ asset('public/storage/' . $image->image_path) }}" alt="Room Image" class="img-thumbnail" style="width: 100px; height: 100px;">
+                                                    <img src="{{ asset('/storage/' . $image->image_path) }}" alt="Room Image" class="img-thumbnail" style="width: 100px; height: 100px;">
                                                     <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0" onclick="deleteImage('{{ $image->id }}')">X</button>
                                                 </div>
                                             @endforeach

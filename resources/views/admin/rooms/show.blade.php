@@ -33,7 +33,7 @@
                                 <div class="carousel-inner rounded shadow">
                                     @foreach ($room->images as $key => $image)
                                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                            <img src="{{ asset('public/storage/' . $image->image_path) }}"
+                                            <img src="{{ asset('/storage/' . $image->image_path) }}"
                                                 class="d-block w-100" alt="Room Image"
                                                 style="height: 350px; object-fit: cover; border-radius: 10px;">
                                         </div>

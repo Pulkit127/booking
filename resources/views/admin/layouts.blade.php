@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Online Shopping</title>
+    <title>{{ env('APP_NAME') }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/shop-ico.png') }}">

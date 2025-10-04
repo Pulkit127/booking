@@ -14,7 +14,7 @@ This is a Laravel-based application named Booking. Below are the steps to set up
 
 <pre>
 <code>git clone https://github.com/Pulkit127/booking.git && 
-cd laraveltask
+cd hotel-booking
 </code>
 
 </pre>
@@ -34,7 +34,7 @@ cd laraveltask
 Update the `.env` file with the following:
 
 <pre>
-<code>APP_NAME=Online Shopping
+<code>APP_NAME="Hotel Booking"
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=false
@@ -51,7 +51,7 @@ Ensure the database settings are properly configured in the `.env` file:
 <code>DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=booking
+DB_DATABASE=hotel_booking
 DB_USERNAME=root
 DB_PASSWORD=
 </code>

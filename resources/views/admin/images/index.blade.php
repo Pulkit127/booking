@@ -33,7 +33,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $image->title ?? '' }}</td>
                                         <td>
-                                            <img src="{{ asset('public/storage/' . $image->url) }}" class="img-fluid"
+                                            <img src="{{ asset('/storage/' . $image->url) }}" class="img-fluid"
                                                 style="max-width: 50px;">
                                         <td>{{ $image->created_at->format('d-m-Y') }}</td>
                                         <td>

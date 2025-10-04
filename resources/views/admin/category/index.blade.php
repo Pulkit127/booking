@@ -33,7 +33,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $category->name ?? '' }}</td>
                                         <td>
-                                            <img src="{{ asset('public/storage/' . $category->image) }}" class="img-fluid"
+                                            <img src="{{ asset('/storage/' . $category->image) }}" class="img-fluid"
                                                 style="max-width: 50px;">
                                         <td>{{ $category->created_at->format('d-m-Y') }}</td>
                                         <td>

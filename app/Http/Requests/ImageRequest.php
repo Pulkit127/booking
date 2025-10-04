@@ -25,6 +25,7 @@ class ImageRequest extends FormRequest
             'category_id' => 'required|integer|exists:categories,id',
             'title' => 'required|string|min:3|max:255',
             'url' => 'required|image|mimes:jpeg,png,jpg',
+            'description' => 'max:255',
         ];
     }
 }
