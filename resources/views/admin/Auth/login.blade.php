@@ -7,14 +7,14 @@
     <title>Online Shopping - Login</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('public/assets/images/shop-ico.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/shop-ico.png') }}">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('public/assets/css/backend-plugin.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/backende209.css?v=1.0.0') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/vendor/remixicon/fonts/remixicon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/backend-plugin.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/backende209.css?v=1.0.0') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/remixicon/fonts/remixicon.css') }}">
 
     <style>
         body {
@@ -120,7 +120,7 @@
                                     </form>
                                 </div>
                                 <div class="col-md-6 bg-light d-flex align-items-center justify-content-center">
-                                    <img src="{{ asset('public/assets/images/login/01.png') }}" alt="Login Illustration" class="image-right">
+                                    <img src="{{ asset('assets/images/login/01.png') }}" alt="Login Illustration" class="image-right">
                                 </div>
                             </div>
                         </div>
@@ -134,11 +134,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('public/assets/js/backend-bundle.min.js') }}"></script>
-    <script src="{{ asset('public/assets/js/table-treeview.js') }}"></script>
-    <script src="{{ asset('public/assets/js/customizer.js') }}"></script>
-    <script src="{{ asset('public/assets/js/chart-custom.js') }}"></script>
-    <script src="{{ asset('public/assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/backend-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/table-treeview.js') }}"></script>
+    <script src="{{ asset('assets/js/customizer.js') }}"></script>
+    <script src="{{ asset('assets/js/chart-custom.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 </body>
 
 </html>

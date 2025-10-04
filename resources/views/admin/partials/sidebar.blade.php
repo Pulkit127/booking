@@ -1,7 +1,7 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
         <a href="{{ route('dashboard') }}" class="header-logo">
-            <img src="{{ asset('public/assets/images/shop-iconn.png') }}" class="img-fluid rounded-normal light-logo"
+            <img src="{{ asset('assets/images/shop-iconn.png') }}" class="img-fluid rounded-normal light-logo"
                 alt="logo">
             <h5 class="logo-title light-logo ml-3">E-Commerces</h5>
         </a>

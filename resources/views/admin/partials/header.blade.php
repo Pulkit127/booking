@@ -4,7 +4,7 @@
             <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                 <i class="ri-menu-line wrapper-menu"></i>
                 <a href="index.html" class="header-logo">
-                    <img src="{{ asset('public/assets/images/logo.png') }}" class="img-fluid rounded-normal"
+                    <img src="{{ asset('assets/images/logo.png') }}" class="img-fluid rounded-normal"
                         alt="logo">
                     <h5 class="logo-title ml-3">POSDash</h5>
                 </a>
@@ -65,7 +65,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="{{ asset('public/assets/images/user/01.jpg') }}"
+                                                            src="{{ asset('assets/images/user/01.jpg') }}"
                                                             alt="01">
                                                     </div>
                                                     <div class="media-body ml-3">
@@ -82,7 +82,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="{{ asset('public/assets/images/user/02.jpg') }}"
+                                                            src="{{ asset('assets/images/user/02.jpg') }}"
                                                             alt="02">
                                                     </div>
                                                     <div class="media-body ml-3">
@@ -99,7 +99,7 @@
                                                 <div class="media align-items-center cust-card py-3">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="{{ asset('public/assets/images/user/03.jpg') }}"
+                                                            src="{{ asset('assets/images/user/03.jpg') }}"
                                                             alt="03">
                                                     </div>
                                                     <div class="media-body ml-3">
@@ -146,7 +146,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="{{ asset('public/assets/images/user/01.jpg') }}"
+                                                            src="{{ asset('assets/images/user/01.jpg') }}"
                                                             alt="01">
                                                     </div>
                                                     <div class="media-body ml-3">
@@ -163,7 +163,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="{{ asset('public/assets/images/user/02.jpg') }}"
+                                                            src="{{ asset('assets/images/user/02.jpg') }}"
                                                             alt="02">
                                                     </div>
                                                     <div class="media-body ml-3">
@@ -180,7 +180,7 @@
                                                 <div class="media align-items-center cust-card py-3">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="{{ asset('public/assets/images/user/03.jpg') }}"
+                                                            src="{{ asset('assets/images/user/03.jpg') }}"
                                                             alt="03">
                                                     </div>
                                                     <div class="media-body ml-3">
@@ -205,16 +205,16 @@
                         <li class="nav-item nav-icon dropdown caption-content">
                             <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{{ asset('public/assets/images/user/1.png') }}" class="img-fluid rounded"
+                                <img src="{{ asset('assets/images/user/1.png') }}" class="img-fluid rounded"
                                     alt="user">
                             </a>
                             <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="card shadow-none m-0">
                                     <div class="card-body p-0 text-center">
                                         <div class="media-body profile-detail text-center">
-                                            <img src="{{ asset('public/assets/images/shop-iconn.png') }}"
+                                            <img src="{{ asset('assets/images/shop-iconn.png') }}"
                                                 alt="profile-bg" class="rounded-top img-fluid mb-4">
-                                            <img src="{{ asset('public/assets/images/user/1.png') }}"
+                                            <img src="{{ asset('assets/images/user/1.png') }}"
                                                 alt="profile-img" class="rounded profile-img img-fluid avatar-70">
                                         </div>
                                         <div class="p-3">
